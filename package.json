@@ -1,0 +1,17 @@
+{
+  "name": "coeurete-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cœurete — boutique en ligne de t-shirts oversize à message (Maroc).",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs && node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18.17" },
+  "devDependencies": {
+    "esbuild": "0.24.0",
+    "three": "0.169.0"
+  }
+}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{{> head}}
+  <title>Merci — Cœurete</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+{{> header}}
+<main id="main">
+  <div class="wrap thanks">
+    <div style="display:grid;gap:22px">
+      <p class="eyebrow coeur-ink">Commande reçue</p>
+      <h1 class="display glitch--ink">Merci<span data-first></span>.</h1>
+      <p class="lede">Ton message est en route. On te contacte très vite par appel ou WhatsApp pour confirmer la livraison.</p>
+      <ol class="next-steps">
+        <li><span><strong>Confirmation</strong> par téléphone ou WhatsApp, en général le jour même.</span></li>
+        <li><span><strong>Livraison en 24 à 72h</strong><span data-city></span>.</span></li>
+        <li><span><strong>Tu paies en espèces</strong> au livreur, à la réception.</span></li>
+      </ol>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn btn--wa" href="#" data-wa-confirm target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.2z"/></svg>Accélérer : confirmer sur WhatsApp</a>
+        <a class="btn btn--ghost" href="index.html#collection">Retour à la collection</a>
+      </div>
+    </div>
+    <div class="thanks__card" data-recap>
+      <img src="img/brand/mascot-3d-640.webp" alt="" width="200" height="200" style="width:160px;justify-self:center">
+      <p class="hand" style="font-size:1.8rem;text-align:center">Ton récapitulatif apparaîtra ici après une commande.</p>
+      <a class="btn btn--ink" href="index.html#collection">Choisir un message</a>
+    </div>
+  </div>
+</main>
+{{> footer}}
+<script src="js/data.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/core.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let o = null;
+  try { o = JSON.parse(sessionStorage.getItem("coeurete-last-order")); } catch {}
+  if (!o && window.name.startsWith("cq:")) { try { o = JSON.parse(window.name.slice(3)); } catch {} }
+  const wa = document.querySelector("[data-wa-confirm]");
+  if (!o) { wa.href = CQ.wa("Salam Cœurete ! J'ai passé une commande sur le site."); return; }
+  if (o.name) document.querySelector("[data-first]").textContent = ", " + o.name;
+  if (o.city) document.querySelector("[data-city]").textContent = " à " + o.city;
+  wa.href = CQ.wa(o.wa);
+  const rows = o.lines.map(l => { const p = CQ.find(l.slug); return p ? `<li class="line"><span class="line__img"><img src="${CQ.img(p, "front", 480)}" alt="" width="64" height="64"></span><div class="line__info"><p class="line__msg hand">${CQ.esc(p.msg)}</p><p class="line__meta">${CQ.colors[p.color].label} · ${l.size} · × ${l.qty}</p></div><div class="line__end"><p class="line__price">${CQ.money(l.total)}</p></div></li>` : ""; }).join("");
+  document.querySelector("[data-recap]").innerHTML = `
+    <p class="eyebrow muted">Numéro de commande</p><p class="order-no">${CQ.esc(o.no)}</p>
+    <ul class="lines">${rows}</ul>
+    <dl class="sums">
+      <div><dt>Sous-total</dt><dd>${CQ.money(o.subtotal)}</dd></div>
+      ${o.discount ? `<div class="is-off"><dt>${CQ.esc(o.discountLabel)}</dt><dd>−${CQ.money(o.discount)}</dd></div>` : ""}
+      <div><dt>Livraison</dt><dd>${o.shipping ? CQ.money(o.shipping) : "Offerte"}</dd></div>
+      ${o.wrap ? `<div><dt>Emballage cadeau</dt><dd>${CQ.money(o.wrap)}</dd></div>` : ""}
+      <div class="sums__total"><dt>À payer à la livraison</dt><dd>${CQ.money(o.total)}</dd></div>
+    </dl>
+    ${o.demo ? `<p class="demo-note">Version de démonstration : cette commande n’a été envoyée nulle part. Sur le site Netlify, chaque commande arrive dans l’onglet Forms (formulaire « commande »). En attendant, confirme-la sur WhatsApp.</p>` : ""}`;
+});
+</script>
+</body>
+</html>

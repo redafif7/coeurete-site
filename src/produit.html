@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{{> head}}
+  <title>T-shirt à message — Cœurete</title>
+  <meta name="description" content="T-shirt oversize 100 % coton Cœurete. Paiement à la livraison partout au Maroc, livraison 24–72h, échange 7 jours.">
+  <meta property="og:image" content="img/brand/og.jpg">
+</head>
+<body>
+{{> header}}
+
+<main id="main">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a><span aria-hidden="true">/</span><a href="index.html#collection">Collection</a><span aria-hidden="true">/</span><span data-crumb aria-current="page">T-shirt</span></nav>
+
+    <div class="pdp" data-pdp>
+      <div class="gallery">
+        <div class="thumbs" role="group" aria-label="Vues du t-shirt">
+          <button class="thumb" type="button" data-view="front" aria-pressed="true"><img data-thumb="front" alt="" width="72" height="72"><span>Devant</span></button>
+          <button class="thumb" type="button" data-view="back" aria-pressed="false"><img data-thumb="back" alt="" width="72" height="72"><span>Dos</span></button>
+        </div>
+        <div class="viewer" data-viewer>
+          <p class="viewer__doodle" data-side-label aria-hidden="true">devant</p>
+          <img data-main width="900" height="900" alt="">
+          <button class="btn btn--cream viewer__flip" type="button" data-flip>Voir le dos</button>
+        </div>
+      </div>
+
+      <div class="buy">
+        <p class="buy__mood"><span data-mood-text></span></p>
+        <div>
+          <h1 data-title>…</h1>
+          <p class="buy__name" data-name></p>
+        </div>
+        <p class="buy__price"><span data-price></span><small data-pack-note>−10 % dès 2 t-shirts</small></p>
+
+        <div class="opt">
+          <p class="opt__label">Couleur <span data-color-name></span></p>
+          <div class="colorway" data-colorway></div>
+        </div>
+
+        <fieldset class="opt" data-size-opt>
+          <legend>Taille <button class="link-btn" type="button" data-guide>Guide des tailles</button></legend>
+          <div class="sizes" data-sizes></div>
+          <p class="opt__err" data-size-err hidden>Choisis ta taille pour continuer.</p>
+        </fieldset>
+
+        <div class="buy__ctas">
+          <div class="buy__row">
+            <div class="stepper" role="group" aria-label="Quantité">
+              <button type="button" data-qty="-1" aria-label="Retirer un">−</button>
+              <output data-qty-out aria-live="polite">1</output>
+              <button type="button" data-qty="1" aria-label="Ajouter un">+</button>
+            </div>
+            <button class="btn btn--coeur" type="button" data-add-main>Ajouter au panier</button>
+          </div>
+          <a class="btn btn--wa btn--block" href="#" data-wa-order target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.2z"/></svg>Commander sur WhatsApp</a>
+        </div>
+
+        <ul class="assure">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg><span><strong>Paiement à la livraison</strong>, en espèces, partout au Maroc.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span><strong>Livraison 24–72h</strong> · 30 MAD, offerte dès 400 MAD.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><span><strong>Échange sous 7 jours</strong> si la taille ne va pas.</span></li>
+        </ul>
+
+        <div>
+          <details class="acc" open><summary>Le dessin au dos</summary><div class="ans"><p data-art></p></div></details>
+          <details class="acc"><summary>Matière &amp; coupe</summary><div class="ans"><p>100 % coton. Coupe oversize : épaules tombantes, corps ample. Le message sur la poitrine, le dessin au dos.</p><p>Prends ta taille habituelle pour l’effet oversize, une taille en dessous pour un tombé plus ajusté.</p></div></details>
+          <details class="acc"><summary>Entretien</summary><div class="ans"><p>Lavage à 30 °C sur l’envers. Pas de sèche-linge. Repassage sur l’envers, jamais sur le dessin.</p></div></details>
+          <details class="acc"><summary>Livraison &amp; échange</summary><div class="ans"><p>Après ta commande, on te contacte par appel ou WhatsApp pour confirmer. Livraison en 24 à 72h selon la ville, paiement en espèces au livreur. Échange gratuit sous 7 jours : t-shirt non porté, non lavé.</p></div></details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="related" aria-labelledby="rel-title">
+    <div class="wrap">
+      <h2 id="rel-title" class="display">Il va bien avec…</h2>
+      <div class="grid" data-related></div>
+    </div>
+  </section>
+</main>
+
+<div class="buybar" data-buybar aria-hidden="true">
+  <div><p class="hand" data-bb-title></p><small data-bb-meta></small></div>
+  <button class="btn btn--coeur" type="button" data-bb-add tabindex="-1">Ajouter</button>
+</div>
+
+<dialog class="dialog" data-guide-dialog aria-labelledby="guide-title">
+  <div class="dialog__in">
+    <div class="dialog__head"><h2 id="guide-title">Guide des tailles</h2>
+      <button class="icon-btn" type="button" data-guide-close aria-label="Fermer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <p class="muted">Mesures du t-shirt à plat, en centimètres. Coupe oversize : prends ta taille habituelle pour l’effet ample.</p>
+    <div class="table-wrap"><table class="size-table" data-size-table></table></div>
+    <p class="muted" style="font-size:13px">Astuce : pose à plat un t-shirt que tu aimes et mesure-le d’aisselle à aisselle. Compare avec la largeur ci-dessus.</p>
+  </div>
+</dialog>
+
+{{> footer}}
+<script src="js/data.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/core.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{{> head}}
+  <title>Commande — Cœurete</title>
+  <meta name="robots" content="noindex">
+</head>
+<body>
+{{> header}}
+
+<main id="main">
+  <div class="wrap co">
+    <form class="co__form" name="commande" method="POST" action="merci.html" data-netlify="true" netlify-honeypot="bot-field" data-checkout novalidate>
+      <input type="hidden" name="form-name" value="commande">
+      <p hidden><label>Ne pas remplir <input name="bot-field"></label></p>
+      <!-- filled by script so the order lands complete in Netlify -->
+      <input type="hidden" name="numero" data-h="numero">
+      <input type="hidden" name="articles" data-h="articles">
+      <input type="hidden" name="sous_total" data-h="sous_total">
+      <input type="hidden" name="remise" data-h="remise">
+      <input type="hidden" name="livraison" data-h="livraison">
+      <input type="hidden" name="emballage" data-h="emballage">
+      <input type="hidden" name="total" data-h="total">
+
+      <div>
+        <p class="eyebrow coeur-ink">Paiement à la livraison</p>
+        <h1 class="display">Ta commande.</h1>
+      </div>
+
+      <div class="cod-badge">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="10" width="32" height="20" rx="3"/><circle cx="20" cy="20" r="4.5"/><path d="M9 15v10M31 15v10"/></svg>
+        <p><strong>Aucune carte demandée.</strong>Tu paies en espèces au livreur, à la réception. On t’appelle ou on t’écrit sur WhatsApp pour confirmer.</p>
+      </div>
+
+      <p class="form-error" data-form-error role="alert" hidden></p>
+
+      <fieldset class="co__block">
+        <legend>Toi</legend>
+        <div class="fields">
+          <div class="field field--full">
+            <label for="nom">Prénom et nom</label>
+            <input id="nom" name="nom" autocomplete="name" required minlength="3">
+            <p class="err" data-err="nom"></p>
+          </div>
+          <div class="field field--full">
+            <label for="telephone">Téléphone <span>(appel ou WhatsApp)</span></label>
+            <input id="telephone" name="telephone" type="tel" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" required>
+            <p class="err" data-err="telephone"></p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="co__block">
+        <legend>Livraison</legend>
+        <div class="fields">
+          <div class="field">
+            <label for="ville">Ville</label>
+            <select id="ville" name="ville" required data-cities><option value="">Choisis ta ville</option></select>
+            <p class="err" data-err="ville"></p>
+          </div>
+          <div class="field" data-other-city hidden>
+            <label for="autre_ville">Nom de ta ville</label>
+            <input id="autre_ville" name="autre_ville" autocomplete="address-level2">
+            <p class="err" data-err="autre_ville"></p>
+          </div>
+          <div class="field field--full">
+            <label for="adresse">Adresse</label>
+            <input id="adresse" name="adresse" autocomplete="street-address" placeholder="Rue, numéro, quartier, repère" required minlength="6">
+            <p class="err" data-err="adresse"></p>
+          </div>
+          <div class="field field--full">
+            <label for="note">Note pour le livreur <span>(facultatif)</span></label>
+            <input id="note" name="note" placeholder="Ex. appeler avant de passer, 2e étage…">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="co__block">
+        <legend>Petits plus</legend>
+        <label class="check"><input type="checkbox" name="cadeau" value="oui" data-gift><span><strong>Emballage cadeau (+25 MAD)</strong><br><span class="muted">Le t-shirt arrive emballé, avec ton mot.</span></span></label>
+        <div class="field" data-gift-note hidden>
+          <label for="mot">Ton mot <span>(140 caractères max.)</span></label>
+          <textarea id="mot" name="mot" maxlength="140" placeholder="Parce que tu es assez."></textarea>
+        </div>
+        <div class="field">
+          <label for="code">Code promo</label>
+          <div class="promo">
+            <input id="code" name="code" autocomplete="off" placeholder="COEUR10">
+            <button class="btn btn--ghost" type="button" data-apply-code>Appliquer</button>
+          </div>
+          <p class="promo-msg" data-code-msg aria-live="polite"></p>
+        </div>
+      </fieldset>
+
+      <label class="check" data-consent-wrap><input type="checkbox" name="consentement" value="oui" required data-consent>
+        <span>J’accepte que Cœurete utilise mes coordonnées pour traiter et livrer cette commande, conformément à la loi 09-08.</span></label>
+
+      <button class="btn btn--coeur btn--block" type="submit" data-submit>Confirmer la commande — <span data-btn-total></span></button>
+      <p class="co__or">ou</p>
+      <a class="btn btn--wa btn--block" href="#" data-wa-checkout target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.2z"/></svg>Envoyer ma commande sur WhatsApp</a>
+      <p class="fine">Le message WhatsApp reprend ton panier et les infos que tu as remplies.</p>
+    </form>
+
+    <aside class="summary" aria-labelledby="sum-title">
+      <h2 id="sum-title">Récapitulatif</h2>
+      <div data-summary></div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-block:28px">
+  <div class="wrap footer__base" style="margin-top:0">
+    <p>© <span data-year>2026</span> Cœurete</p>
+    <p><a href="#" data-wa-link="Salam Cœurete ! J'ai une question sur ma commande.">Besoin d’aide ? WhatsApp · <span data-wa-number></span></a></p>
+  </div>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/core.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

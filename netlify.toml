@@ -1,0 +1,7 @@
+# Optional: connect this repo to Netlify for the real store (orders saved in Netlify Forms).
+[build]
+  command = "npm ci && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"

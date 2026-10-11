@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{{> head}}
+  <title>Cœurete — T-shirts oversize à message | Maroc</title>
+  <meta name="description" content="16 t-shirts oversize 100 % coton, un message qui parle au cœur… et à la tête. Paiement à la livraison partout au Maroc, livraison 24–72h, échange 7 jours.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cœurete — Porte ce que tu ressens.">
+  <meta property="og:description" content="T-shirts oversize 100 % coton à message. Paiement à la livraison partout au Maroc.">
+  <meta property="og:image" content="img/brand/og.jpg">
+  <meta property="og:locale" content="fr_MA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="img/brand/mascot-3d-640.webp">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Cœurete","slogan":"Plus qu'un t-shirt, un état d'esprit.","areaServed":"MA","sameAs":["https://instagram.com/coeurete"]}</script>
+</head>
+<body>
+{{> header}}
+
+<main id="main">
+
+  <!-- HERO — night stage -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="hero__kicker eyebrow"><span class="dot" aria-hidden="true"></span>Collection 01 · 16 messages · 8 couleurs</p>
+        <h1 id="hero-title" class="display">
+          <span class="hl glitch">Porte ce que</span>
+          <span class="hl hl--alt">tu ressens.</span>
+        </h1>
+        <p class="hero__today hand" aria-live="polite">
+          <span class="label">Aujourd’hui, mon cœur dit :</span>
+          <span class="msg" data-today>Tout ira bien.</span>
+        </p>
+        <p class="hero__sub">T-shirts oversize 100 % coton, avec un message qui parle au cœur… et à la tête. Tu choisis ce que tu portes, et ce que tu dis.</p>
+        <div class="hero__cta">
+          <a class="btn btn--coeur" href="#collection">Choisir mon message
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></a>
+          <a class="btn btn--ghost" href="#histoire">L’histoire Cœurete</a>
+        </div>
+        <ul class="hero__trust" aria-label="Nos engagements">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>Paiement à la livraison</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>24–72h partout au Maroc</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>Échange 7 jours</li>
+        </ul>
+      </div>
+
+      <div class="stage" data-stage>
+        <svg class="stage__ring" viewBox="0 0 500 600" aria-hidden="true" preserveAspectRatio="none">
+          <path d="M262 38c96 6 188 78 206 196 19 126-36 262-160 318-118 53-250 4-290-118C-20 316 20 150 128 82c50-32 104-46 160-42 30 2 58 10 84 22"/>
+          <path d="M240 60c-100 2-186 84-198 196-12 118 60 236 184 262 130 28 236-64 250-190 12-110-46-214-150-252"/>
+        </svg>
+        <div class="stage__floor" aria-hidden="true"></div>
+        <img class="stage__poster" src="img/brand/mascot-3d-640.webp" srcset="img/brand/mascot-3d-640.webp 640w, img/brand/mascot-3d-1100.webp 1100w" sizes="(max-width: 900px) 340px, 520px" width="640" height="640" alt="La mascotte Cœurete : un cœur rouge souriant, avec des bras et des jambes.">
+        <p class="stage__note hand" aria-hidden="true">touche-le !
+          <svg viewBox="0 0 60 44"><path d="M4 38C14 24 30 14 50 10m0 0-9-4m9 4-5 8"/></svg></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESSAGES MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__row" data-marquee></div>
+  </div>
+
+  <!-- COLLECTION -->
+  <section class="section" id="collection" aria-labelledby="col-title">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <h2 id="col-title" class="display glitch--ink">16 messages.<br>Un seul à choisir.</h2>
+        <div>
+          <p class="serif">Chaque t-shirt porte une phrase devant, et un petit dessin au dos.</p>
+          <p class="muted" style="margin-top:10px">Survole un t-shirt pour voir son dos. Clique sur + pour l’ajouter en un geste.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <p class="filters__q">Aujourd’hui, j’ai besoin de…</p>
+        <div class="moods" role="group" aria-label="Filtrer par humeur" data-moods></div>
+        <div class="swatches" role="group" aria-label="Filtrer par couleur" data-swatches></div>
+        <p class="mood-line" data-mood-line aria-live="polite">Les 16 messages de la collection.</p>
+      </div>
+
+      <div class="grid" data-grid>
+{{grid}}
+      </div>
+    </div>
+  </section>
+
+  <!-- FACTS from the board -->
+  <section class="wrap" aria-label="La matière">
+    <div class="facts">
+      <div class="fact"><b>100 % coton</b><span>Doux, épais, fait pour durer.</span></div>
+      <div class="fact"><b>Oversize</b><span>Épaules tombantes, coupe ample.</span></div>
+      <div class="fact"><b>8 couleurs</b><span class="dots" data-dots aria-hidden="true"></span></div>
+      <div class="fact"><b>16 messages</b><span>Un devant, un dessin au dos.</span></div>
+    </div>
+  </section>
+
+  <!-- CŒUR / TÊTE -->
+  <section class="section" id="histoire" aria-labelledby="story-title">
+    <div class="wrap head" data-reveal>
+      <h2 id="story-title" class="display">Cœur + Tête<br><span class="coeur-ink">= Cœurete.</span></h2>
+      <p class="serif">Un nom, deux voix. Le cœur qui ressent, la tête qui décide. Nos t-shirts parlent aux deux.</p>
+    </div>
+    <div class="split" data-split>
+      <div class="split__layer split__layer--coeur">
+        <div class="wrap split__content">
+          <div class="split__side">
+            <p class="split__word">Le cœur<br>ressent.</p>
+            <div class="split__copy">
+              <p class="hand">« Ça va passer. »</p>
+              <p>Il y a les jours où tout déborde. Un message sur la poitrine, c’est une main sur l’épaule. Pour toi, et pour ceux qui le lisent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="split__layer split__layer--tete">
+        <div class="wrap split__content">
+          <div class="split__side">
+            <p class="split__word">La tête<br>décide.</p>
+            <div class="split__copy">
+              <p class="hand">« Crois en toi. »</p>
+              <p>Et il y a les jours où tu choisis qui tu veux être. Une coupe nette, une phrase claire, et tu avances.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img class="split__mark" src="img/brand/wordmark-3d-1400.webp" width="1400" height="363" alt="Logo Cœurete en 3D" loading="lazy">
+      <input class="split__range" type="range" min="8" max="92" value="50" aria-label="Glisser entre le cœur et la tête" data-split-range>
+      <div class="split__handle" aria-hidden="true">
+        <div class="split__knob"><svg viewBox="0 0 34 18"><path d="M9 3 3 9l6 6M25 3l6 6-6 6M3 9h28"/></svg></div>
+      </div>
+      <p class="split__hint" aria-hidden="true">glisse pour changer de voix</p>
+    </div>
+  </section>
+
+  <!-- HOW TO ORDER — real sequence -->
+  <section class="nuit section" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <h2 id="how-title" class="display glitch">Commander,<br>c’est une minute.</h2>
+        <p class="muted">Pas de carte bancaire. Tu paies en espèces quand le livreur te remet ton colis.</p>
+      </div>
+      <ol class="steps">
+        <li class="step" data-reveal><span class="step__n" aria-hidden="true">1</span><h3>Choisis ton message</h3><p>Ta couleur, ta taille. Le guide des tailles est sur chaque fiche.</p></li>
+        <li class="step" data-reveal><span class="step__n" aria-hidden="true">2</span><h3>Laisse ton numéro</h3><p>Nom, téléphone, ville, adresse. C’est tout.</p></li>
+        <li class="step" data-reveal><span class="step__n" aria-hidden="true">3</span><h3>On confirme</h3><p>On te contacte par appel ou WhatsApp pour valider la commande.</p></li>
+        <li class="step" data-reveal><span class="step__n" aria-hidden="true">4</span><h3>Tu paies à la porte</h3><p>Livraison en 24 à 72h. Échange gratuit sous 7 jours si la taille ne va pas.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section class="section" id="offrir" aria-labelledby="gift-title">
+    <div class="wrap gift">
+      <div class="gift__pile" data-reveal>
+        <img src="img/tees/14-front-900.webp" width="900" height="900" alt="T-shirt bleu ciel « Tu es assez. »" loading="lazy">
+        <img src="img/tees/07-back-900.webp" width="900" height="900" alt="Dos du t-shirt rose « Sois toi-même. »" loading="lazy">
+        <p class="gift__tag"><small>Pour toi, de la part de moi</small>Parce que tu es assez.</p>
+      </div>
+      <div class="gift__copy" data-reveal>
+        <p class="eyebrow coeur-ink">Offrir un message</p>
+        <h2 class="display">Dis-le avec<br>un t-shirt.</h2>
+        <p class="lede">Il y a des phrases difficiles à dire à voix haute. Offre-les.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><strong>Emballage cadeau à 25 MAD</strong>, à cocher au moment de commander.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><strong>Un mot de ta part</strong>, glissé dans le paquet.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg><span><strong>Taille à échanger</strong> sous 7 jours si elle ne va pas.</span></li>
+        </ul>
+        <div><a class="btn btn--ink" href="#collection">Choisir le message à offrir</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title" style="padding-top:0">
+    <div class="wrap faq">
+      <div class="faq__aside">
+        <h2 id="faq-title" class="display">Les questions<br>qu’on nous pose.</h2>
+        <p class="muted">Une autre question ? Écris-nous, on répond vite.</p>
+        <div><a class="btn btn--wa" href="#" data-wa-link="Salam Cœurete ! J'ai une question :">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.2z"/></svg>Écrire sur WhatsApp</a></div>
+      </div>
+      <div>
+        <details class="qa" open>
+          <summary>Comment je paie ?</summary>
+          <div class="ans"><p>En espèces, à la livraison, partout au Maroc. Aucune carte bancaire n’est demandée sur le site.</p></div>
+        </details>
+        <details class="qa">
+          <summary>En combien de temps je reçois ma commande ?</summary>
+          <div class="ans"><p>Entre 24 et 72h selon ta ville, après confirmation par téléphone ou WhatsApp. La livraison coûte 30 MAD et devient offerte dès 400 MAD d’achat.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Quelle taille choisir ?</summary>
+          <div class="ans">
+            <p>La coupe est oversize : prends ta taille habituelle pour l’effet ample, une taille en dessous pour un tombé plus près du corps. Mesures à plat, en centimètres :</p>
+            <div class="table-wrap"><table class="size-table" data-size-table></table></div>
+          </div>
+        </details>
+        <details class="qa">
+          <summary>Et si la taille ne va pas ?</summary>
+          <div class="ans"><p>Tu as 7 jours après réception pour l’échanger. Écris-nous sur WhatsApp avec ton numéro de commande. Le t-shirt doit être non porté et non lavé.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Les réductions se cumulent ?</summary>
+          <div class="ans"><p>Dès 2 t-shirts, tu as −10 % sur toute la commande. Le code COEUR10 donne aussi −10 % : c’est toujours le meilleur avantage qui s’applique, sans cumul.</p></div>
+        </details>
+        <details class="qa">
+          <summary>Comment laver mon t-shirt ?</summary>
+          <div class="ans"><p>À 30 °C, retourné sur l’envers. Pas de sèche-linge. Repasse sur l’envers, jamais directement sur le dessin.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB -->
+  <section class="nuit section" aria-labelledby="club-title">
+    <div class="wrap club">
+      <div>
+        <p class="eyebrow" style="color:var(--tete)">Newsletter</p>
+        <h2 id="club-title" class="display glitch">Le Club.</h2>
+        <p>Les nouveaux messages, avant tout le monde.</p>
+      </div>
+      <form name="club" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-club novalidate>
+        <input type="hidden" name="form-name" value="club">
+        <p hidden><label>Ne pas remplir <input name="bot-field"></label></p>
+        <input type="hidden" name="canal" value="email" data-club-canal>
+        <p class="muted">Un message par mois, pas plus. Et les nouvelles couleurs avant tout le monde.</p>
+        <div class="switch" role="group" aria-label="Recevoir par">
+          <button type="button" aria-pressed="true" data-canal="email">E-mail</button>
+          <button type="button" aria-pressed="false" data-canal="whatsapp">WhatsApp</button>
+        </div>
+        <label class="sr-only" for="club-contact" data-club-label>Ton adresse e-mail</label>
+        <div class="inline-field">
+          <input id="club-contact" name="contact" type="email" autocomplete="email" placeholder="ton@email.com" required>
+          <button class="btn btn--coeur" type="submit">Rejoindre</button>
+        </div>
+        <p class="form-msg" data-club-msg role="status"></p>
+        <p class="muted" style="font-size:12px">Tu peux te désinscrire à tout moment. Données traitées conformément à la loi 09-08.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+{{> footer}}
+<script src="js/data.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/core.js"></script>
+<script src="js/home.js"></script>
+<script type="module" src="js/mascot3d.js"></script>
+</body>
+</html>
